@@ -9,12 +9,18 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    @IBOutlet weak var button: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
 
-
+    @IBAction func buttonTapped(_ sender: Any) {
+        UIView.animate(withDuration: 1, animations: {
+            self.button.transform = CGAffineTransform.init(translationX: 0, y: 300)
+        })
+    }
+    
 }
 
