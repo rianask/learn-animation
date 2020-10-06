@@ -19,7 +19,11 @@ class ViewController: UIViewController {
     @IBAction func buttonTapped(_ sender: Any) {
         UIView.animate(withDuration: 1, animations: {
             self.button.transform = CGAffineTransform.init(translationX: 0, y: 300)
-        })
+        }) { [weak self] _ in
+            UIView.animate(withDuration: 1, animations: {
+                self?.button.transform = CGAffineTransform.identity
+            })
+        }
     }
     
 }
